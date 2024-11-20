@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>查看客戶</title>
+</head>
+<body>
+<h1>查看客戶</h1>
+<p>ID：<span th:text="${customer.id}"></span></p>
+<p>名字：<span th:text="${customer.firstName}"></span></p>
+<p>姓氏：<span th:text="${customer.lastName}"></span></p>
+<p>Email：<span th:text="${customer.email}"></span></p>
+<a th:href="@{/}">返回列表</a>
+</body>
+</html>

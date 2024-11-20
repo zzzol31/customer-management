@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>編輯客戶</title>
+</head>
+<body>
+<h1>編輯客戶</h1>
+<form th:action="@{/edit/{id}(id=${customer.id})}" role="form" method="post" th:object="${customer}">
+    <label for="firstName">名字：</label>
+    <input placeholder="輸入你的名字" type="text" id="firstName" th:field="*{firstName}" />
+    <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+
+    <label for="lastName">姓氏：</label>
+    <input placeholder="輸入你的姓氏" type="text" id="lastName" th:field="*{lastName}" />
+    <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+
+    <label for="email">Email：</label>
+    <input placeholder="輸入你的Email" type="text" id="email" th:field="*{email}" />
+    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+
+    <button type="submit">保存</button>
+    <a th:href="@{/}">取消</a>
+</form>
+</body>
+</html>
